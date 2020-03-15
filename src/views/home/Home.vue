@@ -26,14 +26,17 @@
 </template>
 
 <script>
+  import NavBar from 'components/common/navbar/NavBar'  
+
   import HomeSwiper from './childComps/HomeSwiper'
   import HomeRecommendView from './childComps/HomeRecommendView'
   import HomeFeatureView from './childComps/HomeFeatureView'
 
-  import NavBar from 'components/common/navbar/NavBar'
   import TabControl from 'components/content/tabControl/TabControl'
   import GoodsList from 'components/content/goods/GoodsList'
+
   import Scroll from 'components/common/scroll/Scroll'
+
   import {debounce} from "common/utils";
   import {getHomeMultidata,getHomeGoods} from "network/home"
 
