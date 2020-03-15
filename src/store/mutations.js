@@ -5,7 +5,7 @@ export default {
       payload.count += 1;
     },
     ADD_TO_CART(state,payload){
-      payload.check = false
+      payload.check = true
       state.cartList.push(payload)
     }
   }

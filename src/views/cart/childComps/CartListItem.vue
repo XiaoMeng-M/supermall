@@ -94,5 +94,4 @@ export default {
         color:orangered;
     }
 
-
 </style>

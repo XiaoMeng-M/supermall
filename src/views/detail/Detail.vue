@@ -27,6 +27,7 @@
 
   import Scroll from 'components/common/scroll/Scroll'
   import DetailBottomBar from './childComps/DetailBottomBar'
+  import Toast from 'components/common/toast/Toast'
 
   import GoodsList from "components/content/goods/GoodsList";
   import {getRecommend,getDetail} from "network/detail";
@@ -53,7 +54,8 @@
             themeTopYs:[],
             getThemeTopY:null,
             currentIndex:0,
-            realPrice:0
+            realPrice:0,
+           
           }
         },
         components:{
@@ -67,6 +69,7 @@
           DetailRate,
           GoodsList,
           DetailBottomBar,
+          Toast
         },
         created() {
           //保存传入的iid
@@ -156,7 +159,11 @@
 
             //将商品添加到购物车
             // this.$store.commit('addCart',product)
-            this.$store.dispatch('addCart',product)
+            this.$store.dispatch('addCart',product).then(res => {
+                this.$toast.show('添加购物车成功',1500)
+                // console.log(this.$toast);
+                
+            })
           }
         }
     }
